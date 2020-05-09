@@ -21,7 +21,6 @@ class ProductManagerTest {
         manager = new ProductManager(repository);
         manager.productAdd(first);
         manager.productAdd(second);
-
     }
 
     @Test
@@ -31,7 +30,6 @@ class ProductManagerTest {
         Product expected = second;
         Product actual = manager.findById(idToFind);
         assertEquals(expected, actual);
-
     }
 
     @Test
@@ -57,5 +55,4 @@ class ProductManagerTest {
         int idToRemove = 4;
         assertThrows(RuntimeException.class, () -> manager.removeById(idToRemove));
     }
-
 }

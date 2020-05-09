@@ -4,16 +4,12 @@ import org.junit.jupiter.api.Test;
 import ru.netology.domain.Book;
 import ru.netology.domain.Product;
 import ru.netology.domain.TShirt;
-
-import java.io.UncheckedIOException;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class ProductRepositoryTest {
     ProductRepository repository = new ProductRepository();
     Book first = new Book(1, "Story1", 1000, "Lada");
     TShirt second = new TShirt(2, "Story2", 2000, "Mari");
-
 
     @Test
     void shouldSave() {
@@ -48,7 +44,6 @@ class ProductRepositoryTest {
         Product expected = second;
         Product actual = repository.findById(idToFind);
         assertEquals(expected, actual);
-
     }
 
     @Test
@@ -80,5 +75,4 @@ class ProductRepositoryTest {
         repository.save(second);
         assertThrows(RuntimeException.class, () -> repository.removeById(idToRemove));
     }
-
 }
